@@ -1,0 +1,27 @@
+Killersudoku
+
+we hebben een spel nodig (Game of Game1 genaamd), dat doet het volgende:
+
+1) kent de volgende statussen: SETUP, USERSOLVING, FINISHED
+
+2) kent een bord[][], bijvoorbeeld bord[9][9] zal veel gebruit worden
+
+3) bord[x][y] is een JLabel,. In feite is onze MVC gewoon één model, totdat ik iets handigers weet te bedenken
+
+4) een Game(1) wordt aangeroepen vanuit het hoofdframe. De constructor moet in elk geval het volgende uitvoeren:
+
+a) creëer de GUI
+b) de GUI bestaat uit:
+
+	1) een KillerPanel vol JLabels, die in feite naar ons bord[][] verwijzen
+	2) een buttonpanel. Dit panel bevat de buttons: HINT en Oplossing.
+	3) als de constructor wordt aangeroepen met alleen een grootte, dan start het spel op in de SETUP-stand, en dan is ook de button "USER SOLVING" beschikbaar.
+	4) als we in de SETUP stand beginnen, dan moeten er SETUP action- en keylisteners aan de cellen worden toegekend. Hiermee moeten dan de groepen kunnen worden aangegeven.
+	5) als we de constructor met een File gebruiken, dan laden we een opgeslagen bestand. We maken dan het bord, en we slaan de button "SETUP" helemaal over. Eigenlijk kunnen we de SETUP button dus wel afschaffen.
+
+5) dus de constructor met de size moet in elk geval het volgende doen:
+
+- maak het Killerpanel, met de juiste hoeveelheid cellen
+- maak het buttonpanel, zonder SETUP
+- als we met de SETUP status beginnen, dan moet de knop START SOLVING erbij, anders hoeft dat niet.
+- als we de constructor met de File gebruiken, dan construeren we het bord en we kijken of alle cellen een group hebben of niet. Zo niet, dan zijn we nog in de setup status, anders laten we de knop SETUP weg, en starten we gelijk met user solving.
